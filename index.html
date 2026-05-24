@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Music Harbor</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Music Harbor">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-accent: #007AFF; --ios-text: #000000; --ios-secondary: #8E8E93; }
+        @media (prefers-color-scheme: dark) { :root { --ios-bg: #000000; --ios-card: #1C1C1E; --ios-text: #FFFFFF; --ios-secondary: #8E8E93; } }
+        body { background-color: var(--ios-bg); color: var(--ios-text); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
+        .ios-card { background-color: var(--ios-card); border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .safe-top { padding-top: env(safe-area-inset-top); }
+        .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+        .tab-bar { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-top: 0.5px solid rgba(0,0,0,0.1); }
+        @media (prefers-color-scheme: dark) { .tab-bar { background: rgba(28, 28, 30, 0.8); border-top: 0.5px solid rgba(255,255,255,0.1); } }
+        .spotify-btn { background-color: #1DB954; color: white; border-radius: 50%; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body class="safe-top safe-bottom h-screen overflow-hidden flex flex-col">
+    <header class="px-5 pt-10 pb-4">
+        <div class="flex justify-between items-center mb-5">
+            <h1 class="text-4xl font-bold tracking-tight">Lanzamientos</h1>
+            <div class="w-10 h-10 bg-gray-200 dark:bg-zinc-800 rounded-full flex items-center justify-center text-blue-500">
+                <i class="fa-solid fa-plus text-xl"></i>
+            </div>
+        </div>
+        <div class="bg-gray-200 dark:bg-zinc-800 p-1 rounded-xl flex text-sm font-semibold">
+            <button id="btn-hn" class="flex-1 py-1.5 bg-white dark:bg-zinc-700 rounded-lg shadow-sm transition-all">Honduras</button>
+            <button id="btn-global" class="flex-1 py-1.5 text-gray-500 transition-all">Global</button>
+        </div>
+    </header>
+    <main class="flex-1 overflow-y-auto px-5 pb-24">
+        <div id="content-grid" class="space-y-4 mt-2">
+            <!-- Template Card -->
+            <div class="ios-card p-3 flex items-center">
+                <div class="w-20 h-20 bg-zinc-300 dark:bg-zinc-700 rounded-lg bg-cover bg-center" style="background-image: url('https://i.scdn.co/image/ab67616d0000b27376c7081702f23e6f9261f307')"></div>
+                <div class="ml-4 flex-1 overflow-hidden">
+                    <h3 class="font-bold text-lg truncate">Nuevo Día</h3>
+                    <p class="text-sm text-gray-500 dark:text-zinc-400 truncate">Key-Key, El High</p>
+                    <p class="text-xs font-medium text-blue-500 mt-1 uppercase tracking-wider">Hoy</p>
+                </div>
+                <a href="spotify:track:6GKbEjuVNKuuAKetDXA2Mi" class="spotify-btn ml-2">
+                    <i class="fa-brands fa-spotify text-2xl"></i>
+                </a>
+            </div>
+            
+            <div class="ios-card p-3 flex items-center opacity-60">
+                <div class="w-20 h-20 bg-zinc-300 dark:bg-zinc-700 rounded-lg bg-cover bg-center" style="background-image: url('https://i.scdn.co/image/ab67616d0000b273922c23507d3b2c9d81d58288')"></div>
+                <div class="ml-4 flex-1 overflow-hidden">
+                    <h3 class="font-bold text-lg truncate">Colapso</h3>
+                    <p class="text-sm text-gray-500 dark:text-zinc-400 truncate">Tcruz, Polache</p>
+                    <p class="text-xs font-medium text-gray-400 mt-1 uppercase tracking-wider">Ayer</p>
+                </div>
+                <a href="spotify:track:4GYn4c9pNkKrZ1dvxT9xh4" class="spotify-btn ml-2">
+                    <i class="fa-brands fa-spotify text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+    <nav class="tab-bar fixed bottom-0 left-0 right-0 h-20 safe-bottom flex justify-around items-center">
+        <div class="flex flex-col items-center text-blue-500">
+            <i class="fa-solid fa-compact-disc text-2xl"></i>
+            <span class="text-[10px] mt-1 font-medium">Lanzamientos</span>
+        </div>
+        <div class="flex flex-col items-center text-gray-400">
+            <i class="fa-solid fa-microphone-lines text-2xl"></i>
+            <span class="text-[10px] mt-1 font-medium">Artistas</span>
+        </div>
+        <div class="flex flex-col items-center text-gray-400">
+            <i class="fa-solid fa-magnifying-glass text-2xl"></i>
+            <span class="text-[10px] mt-1 font-medium">Explorar</span>
+        </div>
+    </nav>
+    <script>
+        const btnHn = document.getElementById('btn-hn');
+        const btnGlobal = document.getElementById('btn-global');
+        const toggle = (active, inactive) => {
+            active.classList.add('bg-white', 'dark:bg-zinc-700', 'shadow-sm');
+            active.classList.remove('text-gray-500');
+            inactive.classList.remove('bg-white', 'dark:bg-zinc-700', 'shadow-sm');
+            inactive.classList.add('text-gray-500');
+        };
+        btnHn.onclick = () => toggle(btnHn, btnGlobal);
+        btnGlobal.onclick = () => toggle(btnGlobal, btnHn);
+    </script>
+</body>
+</html>
