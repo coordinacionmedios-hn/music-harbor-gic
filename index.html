@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Music Harbor</title>
+    <title>GIC Music Hub</title>
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -11,132 +11,185 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --ios-bg: #FFFFFF; --ios-text: #000000; --ios-pill: #A0A0A0; }
+        :root { --ios-bg: #FFFFFF; --ios-text: #000000; --ios-pill: #A0A0A0; --ios-blue: #007AFF; }
         @media (prefers-color-scheme: dark) { :root { --ios-bg: #000000; --ios-text: #FFFFFF; --ios-pill: #3A3A3C; } }
         body { background-color: var(--ios-bg); color: var(--ios-text); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
         .safe-top { padding-top: env(safe-area-inset-top); }
         .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
         .tab-bar { background: rgba(249, 249, 249, 0.94); backdrop-filter: blur(20px); border-top: 0.5px solid rgba(0,0,0,0.1); }
-        @media (prefers-color-scheme: dark) { .tab-bar { background: rgba(18, 18, 18, 0.94); border-top: 0.5px solid rgba(255,255,255,0.1); } }
-        .pill { background-color: var(--ios-pill); color: #FFFFFF; border-radius: 4px; padding: 2px 6px; font-size: 10px; font-weight: 600; text-transform: uppercase; }
-        .search-bar { background-color: #EBEDF0; border-radius: 10px; padding: 8px 12px; }
-        @media (prefers-color-scheme: dark) { .search-bar { background-color: #1C1C1E; } }
-        .floating-segment { background: rgba(235, 237, 240, 0.9); backdrop-filter: blur(10px); border-radius: 14px; padding: 4px; }
-        @media (prefers-color-scheme: dark) { .floating-segment { background: rgba(28, 28, 30, 0.9); } }
-        .active-tab { color: #007AFF; }
-        .spotify-indicator { color: #1DB954; font-size: 14px; margin-left: 4px; }
+        @media (prefers-color-scheme: dark) { .tab-bar { background: rgba(20, 20, 20, 0.94); border-top: 0.5px solid rgba(255,255,255,0.1); } }
+        .active-tab { color: var(--ios-blue); }
+        .search-bar { background: rgba(120, 120, 128, 0.12); border-radius: 10px; padding: 8px 12px; }
+        .album-card { transition: transform 0.1s ease; }
+        .album-card:active { transform: scale(0.98); }
     </style>
 </head>
-<body class="safe-top safe-bottom h-screen overflow-hidden flex flex-col">
-    <!-- Header Tools -->
-    <div class="px-5 pt-4 flex justify-between items-center">
-        <div class="w-10 h-10 bg-gray-100 dark:bg-zinc-800 rounded-full flex items-center justify-center">
-            <i class="fa-solid fa-ellipsis text-gray-600"></i>
-        </div>
-        <div class="flex space-x-4 items-center text-gray-500">
-            <i class="fa-solid fa-chart-line"></i>
-            <i class="fa-solid fa-grip"></i>
-            <i class="fa-solid fa-wand-magic-sparkles text-gray-400"></i>
-        </div>
-    </div>
+<body class="flex flex-col h-screen overflow-hidden">
+    <!-- Status Bar Safe Area -->
+    <div class="safe-top"></div>
 
     <header class="px-5 pt-4 pb-2">
-        <h1 class="text-4xl font-bold border-b-4 border-blue-500 inline-block">Lanzamientos</h1>
-        <div class="mt-4 search-bar flex items-center text-gray-500">
-            <i class="fa-solid fa-magnifying-glass mr-2"></i>
-            <span class="text-sm">Álbum, artista o género</span>
+        <div id="page-title-container">
+            <h1 id="main-title" class="text-4xl font-bold border-b-4 border-blue-500 inline-block">Lanzamientos</h1>
         </div>
         
-        <div class="mt-4 flex space-x-4 text-xs font-bold uppercase tracking-widest border-b border-gray-100 dark:border-zinc-800 pb-2">
-            <button id="btn-hn" class="text-blue-500">Honduras</button>
-            <button id="btn-global" class="text-gray-400">Global</button>
+        <div class="mt-4 search-bar flex items-center text-gray-500">
+            <i class="fa-solid fa-magnifying-glass mr-2"></i>
+            <input type="text" id="search-input" placeholder="Álbum, artista o género" class="bg-transparent border-none outline-none w-full text-ios-text text-sm">
+        </div>
+        
+        <div id="filter-tabs" class="mt-4 flex space-x-4 text-xs font-bold uppercase tracking-widest border-b border-gray-100 dark:border-zinc-800 pb-2">
+            <button id="btn-hn" class="text-blue-500 transition-colors">Honduras</button>
+            <button id="btn-global" class="text-gray-400 transition-colors">Global</button>
         </div>
     </header>
 
-    <main class="flex-1 overflow-y-auto px-5 pb-32">
-        <h2 class="text-xl font-bold mt-6 mb-4">Este Mes</h2>
+    <main id="main-content" class="flex-1 overflow-y-auto px-5 pb-32">
+        <div id="refresh-indicator" class="text-center py-2 text-xs text-gray-400 hidden">
+            <i class="fa-solid fa-arrows-rotate fa-spin mr-1"></i> Actualizando...
+        </div>
         
-        <div id="content-grid" class="space-y-6">
-            <!-- Card Option A: Whole card clickable -->
-            <a href="spotify:track:6GKbEjuVNKuuAKetDXA2Mi" class="flex items-start active:opacity-60 transition-opacity">
-                <div class="w-24 h-24 bg-zinc-200 rounded-lg bg-cover bg-center shadow-sm" style="background-image: url('https://i.scdn.co/image/ab67616d0000b27376c7081702f23e6f9261f307')"></div>
-                <div class="ml-4 flex-1 flex flex-col justify-center">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-lg font-medium leading-tight">NUEVO DÍA <span class="text-gray-400 font-normal">- Single</span> <i class="fa-brands fa-spotify spotify-indicator"></i></h3>
-                            <p class="text-gray-500 dark:text-zinc-400 mt-0.5">Key-Key, El High</p>
-                        </div>
-                        <div class="w-2.5 h-2.5 bg-blue-500 rounded-full mt-2"></div>
-                    </div>
-                    <div class="flex space-x-1.5 mt-4">
-                        <span class="pill">HOY</span>
-                        <span class="pill">SENCILLO</span>
-                        <span class="pill">URBANO</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="spotify:track:4GYn4c9pNkKrZ1dvxT9xh4" class="flex items-start active:opacity-60 transition-opacity">
-                <div class="w-24 h-24 bg-zinc-200 rounded-lg bg-cover bg-center shadow-sm" style="background-image: url('https://i.scdn.co/image/ab67616d0000b273922c23507d3b2c9d81d58288')"></div>
-                <div class="ml-4 flex-1 flex flex-col justify-center">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-lg font-medium leading-tight">COLAPSO <span class="text-gray-400 font-normal">- Single</span> <i class="fa-brands fa-spotify spotify-indicator"></i></h3>
-                            <p class="text-gray-500 dark:text-zinc-400 mt-0.5">Tcruz, Polache</p>
-                        </div>
-                        <div class="w-2.5 h-2.5 bg-blue-500 rounded-full mt-2"></div>
-                    </div>
-                    <div class="flex space-x-1.5 mt-4">
-                        <span class="pill">AYER</span>
-                        <span class="pill">SENCILLO</span>
-                        <span class="pill">POP ROCK</span>
-                    </div>
-                </div>
-            </a>
+        <div id="section-title" class="text-xl font-bold mt-6 mb-4">Recientes</div>
+        <div id="content-grid" class="grid grid-cols-2 gap-4">
+            <!-- Dynamic content here -->
         </div>
     </main>
 
-    <div class="fixed bottom-24 left-1/2 -translate-x-1/2 w-80">
-        <div class="floating-segment flex text-xs font-bold uppercase shadow-lg">
-            <button class="flex-1 py-3 bg-white dark:bg-zinc-700 rounded-xl shadow-sm">Disponibles</button>
-            <button class="flex-1 py-3 text-gray-500">Próximamente</button>
-        </div>
-    </div>
-
+    <!-- Navigation Bar -->
     <nav class="tab-bar fixed bottom-0 left-0 right-0 h-20 safe-bottom flex justify-around items-center px-2">
-        <div class="flex flex-col items-center text-gray-400">
-            <i class="fa-solid fa-users text-xl"></i>
+        <div onclick="switchPage('siguiendo')" class="flex flex-col items-center text-gray-400 cursor-pointer nav-item" id="nav-siguiendo">
+            <i class="fa-solid fa-heart text-xl"></i>
             <span class="text-[9px] mt-1 font-bold">Siguiendo</span>
         </div>
-        <div class="flex flex-col items-center text-gray-400">
+        <div onclick="switchPage('noticias')" class="flex flex-col items-center text-gray-400 cursor-pointer nav-item" id="nav-noticias">
             <i class="fa-solid fa-newspaper text-xl"></i>
             <span class="text-[9px] mt-1 font-bold">Noticias</span>
         </div>
-        <div class="flex flex-col items-center active-tab">
+        <div onclick="switchPage('lanzamientos')" class="flex flex-col items-center active-tab cursor-pointer nav-item" id="nav-lanzamientos">
             <i class="fa-solid fa-layer-group text-xl"></i>
             <span class="text-[9px] mt-1 font-bold">Lanzamientos</span>
         </div>
-        <div class="flex flex-col items-center text-gray-400">
-            <i class="fa-solid fa-clapperboard text-xl"></i>
-            <span class="text-[9px] mt-1 font-bold">Videos</span>
-        </div>
-        <div class="flex flex-col items-center text-gray-400">
+        <div onclick="switchPage('ajustes')" class="flex flex-col items-center text-gray-400 cursor-pointer nav-item" id="nav-ajustes">
             <i class="fa-solid fa-gear text-xl"></i>
             <span class="text-[9px] mt-1 font-bold">Ajustes</span>
         </div>
     </nav>
-    
+
     <script>
-        const btnHn = document.getElementById('btn-hn');
-        const btnGlobal = document.getElementById('btn-global');
-        btnHn.onclick = () => {
-            btnHn.classList.replace('text-gray-400', 'text-blue-500');
-            btnGlobal.classList.replace('text-blue-500', 'text-gray-400');
+        let currentMode = 'hn'; // 'hn' or 'global'
+        let currentPage = 'lanzamientos';
+        let releasesData = { hn: [], global: [] };
+
+        async function loadReleases() {
+            document.getElementById('refresh-indicator').classList.remove('hidden');
+            try {
+                const response = await fetch('releases.json?t=' + Date.now());
+                releasesData = await response.json();
+                renderContent();
+            } catch (error) {
+                console.error('Error loading releases:', error);
+            } finally {
+                document.getElementById('refresh-indicator').classList.add('hidden');
+            }
+        }
+
+        function renderContent() {
+            const grid = document.getElementById('content-grid');
+            grid.innerHTML = '';
+            
+            if (currentPage !== 'lanzamientos') {
+                grid.className = 'flex flex-col space-y-4';
+                if (currentPage === 'siguiendo') {
+                    grid.innerHTML = '<div class="text-gray-500 text-center mt-10">Lista de artistas seguidos aparecerá aquí.</div>';
+                } else if (currentPage === 'noticias') {
+                    grid.innerHTML = '<div class="text-gray-500 text-center mt-10">Últimas noticias de la industria.</div>';
+                } else {
+                    grid.innerHTML = '<div class="text-gray-500 text-center mt-10">Configuración del App.</div>';
+                }
+                return;
+            }
+
+            grid.className = 'grid grid-cols-2 gap-4';
+            const data = releasesData[currentMode] || [];
+            
+            if (data.length === 0) {
+                grid.innerHTML = '<div class="col-span-2 text-center text-gray-400 mt-10">No hay lanzamientos recientes.</div>';
+                return;
+            }
+
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'album-card';
+                card.innerHTML = `
+                    <a href="${item.uri}" class="block">
+                        <div class="aspect-square bg-zinc-200 rounded-lg bg-cover bg-center shadow-sm" style="background-image: url('${item.image}')"></div>
+                        <div class="mt-2">
+                            <div class="text-xs font-bold text-blue-500 uppercase">${item.type}</div>
+                            <div class="text-sm font-bold truncate">${item.title}</div>
+                            <div class="text-xs text-gray-500 truncate">${item.artist}</div>
+                            <div class="text-[10px] text-gray-400 mt-1">${formatDate(item.date)}</div>
+                        </div>
+                    </a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            const now = new Date();
+            const diff = (now - date) / (1000 * 60 * 60 * 24);
+            if (diff < 1) return 'HOY';
+            if (diff < 2) return 'AYER';
+            return date.toLocaleDateString('es-HN', { day: 'numeric', month: 'short' });
+        }
+
+        function switchPage(page) {
+            currentPage = page;
+            const titles = {
+                siguiendo: 'Siguiendo',
+                noticias: 'Noticias',
+                lanzamientos: 'Lanzamientos',
+                ajustes: 'Ajustes'
+            };
+            document.getElementById('main-title').innerText = titles[page];
+            
+            // Toggle filter tabs visibility
+            document.getElementById('filter-tabs').style.display = (page === 'lanzamientos') ? 'flex' : 'none';
+            document.getElementById('section-title').innerText = (page === 'lanzamientos') ? 'Recientes' : '';
+
+            // Update nav icons
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active-tab');
+                item.classList.add('text-gray-400');
+            });
+            document.getElementById('nav-' + page).classList.add('active-tab');
+            document.getElementById('nav-' + page).classList.remove('text-gray-400');
+
+            renderContent();
+        }
+
+        // Toggles
+        document.getElementById('btn-hn').onclick = () => {
+            currentMode = 'hn';
+            document.getElementById('btn-hn').className = 'text-blue-500 transition-colors';
+            document.getElementById('btn-global').className = 'text-gray-400 transition-colors';
+            renderContent();
         };
-        btnGlobal.onclick = () => {
-            btnGlobal.classList.replace('text-gray-400', 'text-blue-500');
-            btnHn.classList.replace('text-blue-500', 'text-gray-400');
+        document.getElementById('btn-global').onclick = () => {
+            currentMode = 'global';
+            document.getElementById('btn-global').className = 'text-blue-500 transition-colors';
+            document.getElementById('btn-hn').className = 'text-gray-400 transition-colors';
+            renderContent();
         };
+
+        // Auto-refresh on focus
+        window.addEventListener('focus', () => {
+            loadReleases();
+        });
+
+        // Initial load
+        loadReleases();
     </script>
 </body>
 </html>
