@@ -428,10 +428,6 @@
         "id": "4sH59GXeTzFwiGRs74XAt3"
       },
       {
-        "name": "Nerry Money",
-        "id": "6g6DtbtyBi3Ir0mxiDlouJ"
-      },
-      {
         "name": "Nibuman",
         "id": "0btyGlNkbHQDkx92E9I5lS"
       },
@@ -587,5 +583,28 @@
       }
     ]
   },
-  "updated": "2026-05-25 00:06:31"
+  "updated": "2026-05-25 00:18:12",
+  "news": [
+    {
+      "title": "Junior H en Honduras: Solo quedan 250 boletos para el Chochi Sosa",
+      "source": "Conciertos HN",
+      "date": "24 May",
+      "img": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=400&q=80",
+      "url": "#"
+    },
+    {
+      "title": "Agenda 2026: Honduras se prepara para un a\u00f1o r\u00e9cord de conciertos",
+      "source": "GIC Music",
+      "date": "23 May",
+      "img": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=80",
+      "url": "#"
+    },
+    {
+      "title": "Zapia PWA: La nueva forma de seguir el talento catracho",
+      "source": "Zapia News",
+      "date": "Hoy",
+      "img": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80",
+      "url": "#"
+    }
+  ]
 }
