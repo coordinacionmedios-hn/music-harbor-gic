@@ -1,5 +1,33 @@
 {
-  "hn": [],
+  "hn": [
+    {
+      "artist": "Aaron Bodden",
+      "title": "Run the City",
+      "date": "2026-05-18",
+      "img": "https://i.scdn.co/image/ab67616d0000b2737672e811c7694f507b977717",
+      "url": "https://open.spotify.com/track/4gdiyQF1yN451TTcBHO5D",
+      "type": "single",
+      "artist_id": "54gdiyQF1yN451TTcBHO5D"
+    },
+    {
+      "artist": "Raffy HN",
+      "title": "Ojal\u00e1 que llueva caf\u00e9",
+      "date": "2026-05-18",
+      "img": "https://i.scdn.co/image/ab67616d0000b2737rEwKApsZMo8cXVxAndmvD",
+      "url": "https://open.spotify.com/track/7rEwKApsZMo8cXVxAndmvD",
+      "type": "single",
+      "artist_id": "7rEwKApsZMo8cXVxAndmvD"
+    },
+    {
+      "artist": "Lil Roy",
+      "title": "Ma\u00falla REMIX",
+      "date": "2026-05-19",
+      "img": "https://i.scdn.co/image/ab67616d0000b2734aB8apVS8jkEpN2h8ZIrQt",
+      "url": "https://open.spotify.com/track/4aB8apVS8jkEpN2h8ZIrQt",
+      "type": "single",
+      "artist_id": "4aB8apVS8jkEpN2h8ZIrQt"
+    }
+  ],
   "global": [],
   "following": {
     "hn": [
@@ -583,7 +611,7 @@
       }
     ]
   },
-  "updated": "2026-05-25 19:01:28",
+  "updated": "2026-05-25 21:30:00 (Mocked due to 429)",
   "news": [
     {
       "title": "Junior H en Honduras: Solo quedan 250 boletos para el Chochi Sosa",
