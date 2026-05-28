@@ -120,6 +120,8 @@
                     renderFollowing(grid);
                 } else if (currentPage === 'noticias') {
                     renderNews(grid);
+                } else if (currentPage === 'noticia_detalle') {
+                    renderNewsDetail(grid);
                 } else {
                     renderSettings(grid);
                 }
@@ -168,9 +170,10 @@
                 siguiendo: 'Siguiendo',
                 noticias: 'Noticias',
                 lanzamientos: 'Lanzamientos',
-                ajustes: 'Ajustes'
+                ajustes: 'Ajustes',
+                noticia_detalle: 'Noticia'
             };
-            document.getElementById('main-title').innerText = titles[page];
+            document.getElementById('main-title').innerText = titles[page] || '';
             
             // Toggle filter tabs visibility
             document.getElementById('filter-tabs').style.display = (page === 'lanzamientos') ? 'flex' : 'none';
@@ -181,8 +184,16 @@
                 item.classList.remove('active-tab');
                 item.classList.add('text-gray-400');
             });
-            document.getElementById('nav-' + page).classList.add('active-tab');
-            document.getElementById('nav-' + page).classList.remove('text-gray-400');
+            
+            const navIcon = document.getElementById('nav-' + page);
+            if (navIcon) {
+                navIcon.classList.add('active-tab');
+                navIcon.classList.remove('text-gray-400');
+            } else if (page === 'noticia_detalle') {
+                // Keep noticias active if we're in detail
+                document.getElementById('nav-noticias').classList.add('active-tab');
+                document.getElementById('nav-noticias').classList.remove('text-gray-400');
+            }
 
             renderContent();
         }
@@ -193,9 +204,13 @@
                 grid.innerHTML = '<div class="text-gray-500 text-center mt-10">No hay noticias hoy.</div>';
                 return;
             }
-            news.forEach(item => {
+            news.forEach((item, index) => {
                 const div = document.createElement('div');
-                div.className = 'flex space-x-3 p-3 bg-gray-50 dark:bg-zinc-900 rounded-xl';
+                div.className = 'flex space-x-3 p-3 bg-gray-50 dark:bg-zinc-900 rounded-xl active:scale-[0.98] transition-transform cursor-pointer';
+                div.onclick = () => {
+                    newsDetailIndex = index;
+                    switchPage('noticia_detalle');
+                };
                 div.innerHTML = `
                     <img src="${item.img}" class="w-20 h-20 rounded-lg object-cover">
                     <div class="flex-1">
@@ -206,6 +221,27 @@
                 `;
                 grid.appendChild(div);
             });
+        }
+
+        function renderNewsDetail(grid) {
+            const item = releasesData.news[newsDetailIndex];
+            if (!item) return;
+
+            grid.className = 'flex flex-col space-y-4';
+            grid.innerHTML = `
+                <button onclick="switchPage('noticias')" class="flex items-center text-blue-500 font-medium mb-2">
+                    <i class="fas fa-chevron-left mr-2"></i> Volver
+                </button>
+                <img src="${item.img}" class="w-full h-64 rounded-2xl object-cover shadow-lg">
+                <div class="px-2">
+                    <div class="text-xs text-blue-500 font-bold uppercase">${item.source}</div>
+                    <h2 class="text-2xl font-bold leading-tight mt-2">${item.title}</h2>
+                    <div class="text-xs text-gray-500 mt-2 border-b border-gray-100 dark:border-zinc-800 pb-4">${item.date}</div>
+                    <div class="text-base leading-relaxed mt-6 text-gray-800 dark:text-gray-200">
+                        ${item.content || 'Cargando contenido...'}
+                    </div>
+                </div>
+            `;
         }
 
         function renderSettings(grid) {
@@ -259,20 +295,20 @@
             }
 
             list.forEach(artist => {
-                const a = document.createElement('a');
-                a.href = `https://open.spotify.com/artist/${artist.id}`;
-                a.target = "_blank";
-                a.className = 'flex items-center justify-between p-3 bg-gray-50 dark:bg-zinc-900 rounded-xl transition-transform active:scale-95';
-                a.innerHTML = `
+                const div = document.createElement('div');
+                div.className = 'flex items-center justify-between p-3 bg-gray-50 dark:bg-zinc-900 rounded-xl';
+                div.innerHTML = `
                     <div class="flex items-center space-x-3">
                         <div class="w-10 h-10 bg-blue-100 dark:bg-zinc-800 rounded-full flex items-center justify-center text-blue-500">
                             <i class="fas fa-user"></i>
                         </div>
                         <span class="font-medium">${artist.name}</span>
                     </div>
-                    <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+                    <button class="text-gray-400 hover:text-red-500">
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </button>
                 `;
-                grid.appendChild(a);
+                grid.appendChild(div);
             });
         }
 
