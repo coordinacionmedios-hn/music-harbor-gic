@@ -1,57 +1,63 @@
 {
   "hn": [
     {
-      "artist": "Aaron Bodden",
-      "title": "Run the City",
-      "date": "2026-05-18",
-      "img": "https://i.scdn.co/image/ab67616d0000b2737672e811c7694f507b977717",
-      "url": "https://open.spotify.com/track/4gdiyQF1yN451TTcBHO5D",
+      "artist": "Key-Key",
+      "title": "Tengo un Plan",
+      "date": "2024-03-21",
+      "img": "https://i.scdn.co/image/ab67616d0000b2734614749f96b9415c4d05f333",
+      "url": "https://open.spotify.com/track/6ZMoZfV9qYy8vjI9X8YvYv",
       "type": "single",
-      "artist_id": "54gdiyQF1yN451TTcBHO5D"
+      "artist_id": "6GKbEjuVNKuuAKetDXA2Mi"
     },
     {
-      "artist": "Raffy HN",
-      "title": "Ojal\u00e1 que llueva caf\u00e9",
-      "date": "2026-05-18",
-      "img": "https://i.scdn.co/image/ab67616d0000b2737rEwKApsZMo8cXVxAndmvD",
-      "url": "https://open.spotify.com/track/7rEwKApsZMo8cXVxAndmvD",
+      "artist": "Menor Menor",
+      "title": "A Tu Nombre",
+      "date": "2024-05-15",
+      "img": "https://i.scdn.co/image/ab67616d0000b27361414749f96b9415c4d05f333",
+      "url": "https://open.spotify.com/track/2663St0NB1IsbMnlF69AeW",
       "type": "single",
-      "artist_id": "7rEwKApsZMo8cXVxAndmvD"
+      "artist_id": "2663St0NB1IsbMnlF69AeW"
     },
     {
-      "artist": "Lil Roy",
-      "title": "Ma\u00falla REMIX",
-      "date": "2026-05-19",
-      "img": "https://i.scdn.co/image/ab67616d0000b2734aB8apVS8jkEpN2h8ZIrQt",
-      "url": "https://open.spotify.com/track/4aB8apVS8jkEpN2h8ZIrQt",
-      "type": "single",
-      "artist_id": "4aB8apVS8jkEpN2h8ZIrQt"
+      "artist": "Polache",
+      "title": "La Juerga",
+      "date": "2024-04-10",
+      "img": "https://i.scdn.co/image/ab67616d0000b273407pHQytUNjAXT1tm0AyzY",
+      "url": "https://open.spotify.com/track/407pHQytUNjAXT1tm0AyzY",
+      "type": "album",
+      "artist_id": "407pHQytUNjAXT1tm0AyzY"
     }
   ],
-  "global": [],
+  "global": [
+    {
+      "artist": "Bad Bunny",
+      "title": "MONACO",
+      "date": "2023-10-13",
+      "img": "https://i.scdn.co/image/ab67616d0000b27349d6942032e99c417614749f",
+      "url": "https://open.spotify.com/track/4q3ewBC6Cngbe2vgoH97UB",
+      "type": "single",
+      "artist_id": "4q3ewBC6Cngbe2vgoH97UB"
+    }
+  ],
   "following": {
     "hn": [
       {
-        "name": "ARM",
-        "id": "4TdMGChhzBYNXhADaEGUZX"
+        "name": "Key-Key",
+        "id": "6GKbEjuVNKuuAKetDXA2Mi"
       },
       {
-        "name": "Aaron Bodden",
-        "id": "54gdiyQF1yN451TTcBHO5D"
+        "name": "Menor Menor",
+        "id": "2663St0NB1IsbMnlF69AeW"
       }
     ],
     "global": [
       {
         "name": "Bad Bunny",
         "id": "4q3ewBC6Cngbe2vgoH97UB"
-      },
-      {
-        "name": "Rauw Alejandro",
-        "id": "1mcTU81TzQhprhouKaTkpq"
       }
     ]
   },
-  "updated": "2026-05-28 13:15:00",
+  "updated": "2026-05-28 13:20:00",
   "news": [
     {
       "title": "Junior H en Honduras: Solo quedan 250 boletos para el Chochi Sosa",
