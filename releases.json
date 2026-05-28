@@ -42,18 +42,562 @@
   "following": {
     "hn": [
       {
+        "name": "Lil Roy",
+        "id": "4aB8apVS8jkEpN2h8ZIrQt"
+      },
+      {
+        "name": "Dean Andrew",
+        "id": "3FLv7WMZZhNVTAago3P4Xq"
+      },
+      {
+        "name": "Chunde",
+        "id": "3cm3Cv3V2pnDDyBMb4G4vi"
+      },
+      {
+        "name": "Prince Kalag",
+        "id": "7eIbJOtu5Kznd33WRi9qPv"
+      },
+      {
+        "name": "Katha Rivera",
+        "id": "0J9f1RnK74YMsbbxm5YerR"
+      },
+      {
         "name": "Key-Key",
         "id": "6GKbEjuVNKuuAKetDXA2Mi"
       },
       {
+        "name": "Alemvn",
+        "id": "4rqn0QVR8LdxsaEqtc6pJz"
+      },
+      {
+        "name": "Fresh Bodden",
+        "id": "7blu0IsZ2zyetdLEQdLVUO"
+      },
+      {
+        "name": "Musica Pal Barrio",
+        "id": "4sH59GXeTzFwiGRs74XAt3"
+      },
+      {
+        "name": "Double Di",
+        "id": "37sw1NItrqhJcnjfpr58CF"
+      },
+      {
+        "name": "Lil Remo",
+        "id": "0V6lDK1uG2Nhp6llyUG155"
+      },
+      {
+        "name": "Davis Flow",
+        "id": "2tuzCZ6rOn7vLatM8Fe4Ka"
+      },
+      {
+        "name": "KBP El Alien",
+        "id": "4O6h6daISMFjWaM9xqJxAM"
+      },
+      {
+        "name": "Gagoman",
+        "id": "3PRBOMXEawNno9abiaCVqf"
+      },
+      {
+        "name": "Jeremy ElMVP",
+        "id": "2JzgopYKFwVq6p5QHIctlr"
+      },
+      {
+        "name": "Raffy HN",
+        "id": "7rEwKApsZMo8cXVxAndmvD"
+      },
+      {
+        "name": "Trooko",
+        "id": "6mPl1Nq6hMkto7vsF0PfGi"
+      },
+      {
+        "name": "Juan Oliva",
+        "id": "1s3MoyfwrjtXi5r9wKLFnc"
+      },
+      {
+        "name": "Guillermo Anderson",
+        "id": "6rxRjKb9HsicUr844FIfpy"
+      },
+      {
+        "name": "JR Clark",
+        "id": "0UyB7e3thHTialgBBojrZL"
+      },
+      {
+        "name": "Dibrasco",
+        "id": "3unqm1tPf5KBUhpNggtf0g"
+      },
+      {
+        "name": "Goldin",
+        "id": "2qdnChURFhL0AEoQ5o8eqm"
+      },
+      {
         "name": "Menor Menor",
         "id": "2663St0NB1IsbMnlF69AeW"
+      },
+      {
+        "name": "Polache",
+        "id": "407pHQytUNjAXT1tm0AyzY"
+      },
+      {
+        "name": "Syrome",
+        "id": "4ifYTIJK6ImOyUQzdUQog1"
+      },
+      {
+        "name": "Hondurola",
+        "id": "7ExAxZFwiBnuIcNwwFBj3g"
+      },
+      {
+        "name": "El Dollar",
+        "id": "4aMB3hmN0Yz569Ck1ylElN"
+      },
+      {
+        "name": "Big Chacha",
+        "id": "24A33XWw0W4afcP7wQ4qd8"
+      },
+      {
+        "name": "Big Nango",
+        "id": "5Hw46AACvInpnxwcahBdSo"
+      },
+      {
+        "name": "Chapasonic",
+        "id": "2rtpEHKoQYbdErVbOHeKd2"
+      },
+      {
+        "name": "Jhown Flow",
+        "id": "32VTbPGLesD7JYTbLrUlQP"
+      },
+      {
+        "name": "Maynor MC",
+        "id": "5WqEFMMRxwnQmkUeu2jX3A"
+      },
+      {
+        "name": "Nilo Espinal",
+        "id": "7N3eeBk7DQAB46EdOKliaL"
+      },
+      {
+        "name": "Oscarito Leiva",
+        "id": "1BakZC6rDirPuUEBzh7u2k"
+      },
+      {
+        "name": "Pez Luna",
+        "id": "1mxd7WqKo2MOYSO4U1ARa1"
+      },
+      {
+        "name": "Roger Mejia",
+        "id": "3KhSEEAKzVadH68Jl6y0Un"
+      },
+      {
+        "name": "Shabakan",
+        "id": "33ctkrIEgfTQ9LyDS68GJr"
+      },
+      {
+        "name": "Yankee 212",
+        "id": "10ZogN7qTCa8kkZcl9FYp3"
+      },
+      {
+        "name": "Yerbaklan",
+        "id": "5TbmM0ymGRjkBr8EI9YFBd"
+      },
+      {
+        "name": "Lil June Afro Punta",
+        "id": "1GGJqRN2ghXJ2w83Nf6FMS"
+      },
+      {
+        "name": "Kazzabe",
+        "id": "758FKId0OeNnHwnFP2pwFv"
+      },
+      {
+        "name": "Larissa Ventura",
+        "id": "6VbX2g7Ncw1lU1mKp8kCDR"
+      },
+      {
+        "name": "Aaron Bodden",
+        "id": "54gdiyQF1yN451TTcBHO5D"
+      },
+      {
+        "name": "AbelDidIt",
+        "id": "4sZzJF8rPEGa2Cs5RDk7GY"
+      },
+      {
+        "name": "Albeezy",
+        "id": "09ESepNWzmarRA7RZO2SEs"
+      },
+      {
+        "name": "Angie Flores",
+        "id": "0mtlM0TqGqmfxPDsgIVc6T"
+      },
+      {
+        "name": "King Frank El Travi",
+        "id": "49yMQTN4zAiryp1fbUO7hK"
+      },
+      {
+        "name": "Montuca Sound System",
+        "id": "4yWlxVt6E3j1loyejZ55vE"
+      },
+      {
+        "name": "Mr. Yambo",
+        "id": "5LBHwFGhldLd1XDPyATxoi"
+      },
+      {
+        "name": "Pilo Tejeda",
+        "id": "0XVYCj51XvKccyphzKQOAc"
+      },
+      {
+        "name": "Toni B",
+        "id": "4lz5EFkquyqfPF1umVZjx8"
+      },
+      {
+        "name": "Dark 180",
+        "id": "3iUCqhrLNuUkMjZudyiM60"
+      },
+      {
+        "name": "Dashitai",
+        "id": "3V6jZs6qiAJI4NAmepv69p"
+      },
+      {
+        "name": "FVNY",
+        "id": "6piT7DPOPuweeQjjXHYAQC"
+      },
+      {
+        "name": "Gabell Beatz DSM",
+        "id": "7FbxrbqBkZi14Ewf6CpfFN"
+      },
+      {
+        "name": "George Marino",
+        "id": "4Fgf6RvuWpiwDXSE7Vammx"
+      },
+      {
+        "name": "Jaso Beat",
+        "id": "4q5QUHNoeTR62HZPEoHvov"
+      },
+      {
+        "name": "Jboy Elqnf",
+        "id": "38QRFNka4gwlbROSZOcdzd"
+      },
+      {
+        "name": "JCP El Especialista",
+        "id": "5Jq51MUz2JWWLPWXovRAFh"
+      },
+      {
+        "name": "Josh Dibrasco",
+        "id": "6EiGIgcGmTGeyGfE5eIPRG"
+      },
+      {
+        "name": "Keilex",
+        "id": "2DR6svTxmA3zJIl6cP5TUC"
+      },
+      {
+        "name": "Khaoticos",
+        "id": "7EwEGxZat6JqMrOJpJnk1P"
+      },
+      {
+        "name": "La Gran Banda",
+        "id": "7bUAuQ2SZDbUbRgEPPeBBo"
+      },
+      {
+        "name": "Lagrima Negra",
+        "id": "1fW62bCxyxUO1yjCluwoDN"
+      },
+      {
+        "name": "Las Catrachas",
+        "id": "6oYC9SJCS2uR6zFo9JAdiC"
+      },
+      {
+        "name": "Las Chicas Rolands",
+        "id": "3EvFD7zFZPxbFpwmhSUrYz"
+      },
+      {
+        "name": "Lipstickfables",
+        "id": "5k9gqp56vs5AtO3MoJ6TYU"
+      },
+      {
+        "name": "Lish La Diferencia",
+        "id": "2R6TjVOYm04vJ5KxsBR3B3"
+      },
+      {
+        "name": "Los Bohemios",
+        "id": "6mm0OohKB6tO9OeHVSWS6Y"
+      },
+      {
+        "name": "Los Silver Star",
+        "id": "6CTqFWJlzyKHtEcVfdLMsP"
+      },
+      {
+        "name": "Los Xheles",
+        "id": "2m8P4TtiFpKNkkTQBfmJ7h"
+      },
+      {
+        "name": "Luis Bustillo",
+        "id": "7w05TjN7fNSNPwJv3BHtif"
+      },
+      {
+        "name": "Most Dangerous City",
+        "id": "1VyVkcNGwAXKoP0muR74qJ"
+      },
+      {
+        "name": "Mr. Blond",
+        "id": "0bmAcx9P5743stEOHPekMM"
+      },
+      {
+        "name": "Nono El Bohemio",
+        "id": "4liSvSQnFTE6CObTVWFntd"
+      },
+      {
+        "name": "Onice Flores",
+        "id": "2DLTcyjk10JWBHBv2JaEuz"
+      },
+      {
+        "name": "Punto Clave",
+        "id": "6OlP9jFmAo0uR7PKPze0HU"
+      },
+      {
+        "name": "Spikemldy",
+        "id": "2rcaw62HURcaSm6PdDm8DA"
+      },
+      {
+        "name": "Banda Blanca",
+        "id": "1Ykx49KpY0FqIXUwyuD3TJ"
+      },
+      {
+        "name": "Jordano HN",
+        "id": "5QctO1zX3iZBFYLilIJW9Y"
+      },
+      {
+        "name": "K Myke",
+        "id": "4t8BzqkQH8Q4ZTfT0sFLo2"
+      },
+      {
+        "name": "Jampol",
+        "id": "3N1gyN9RpWTPjZQqiPF0QF"
+      },
+      {
+        "name": "El Profeta HN",
+        "id": "5SAevBqeFfy5EKnBtPT1kU"
+      },
+      {
+        "name": "Tcruz",
+        "id": "4GYn4c9pNkKrZ1dvxT9xh4"
+      },
+      {
+        "name": "El High",
+        "id": "1LViN9Xsu9YIMN6IZJk8Bp"
+      },
+      {
+        "name": "Mr JC",
+        "id": "42TNOe97Vn2D6OgjNpaxZc"
+      },
+      {
+        "name": "Lil David Six",
+        "id": "53o3SPkEknA7KAr7X8mlp5"
+      },
+      {
+        "name": "Glitch GMF",
+        "id": "4jPnJgpmwcqQLqDwycHahr"
+      },
+      {
+        "name": "Gatiman",
+        "id": "77kWwVF0UPGXOr02jOOATm"
+      },
+      {
+        "name": "Gabo Cortes",
+        "id": "0P35ME9hGzLcbHV4NeYbVd"
+      },
+      {
+        "name": "Franoman",
+        "id": "34euA1sX1ZxH1ogOPiJcsW"
+      },
+      {
+        "name": "Eddy Ranks",
+        "id": "2t1Gnw7G3YaBpbJ0qAJbSn"
+      },
+      {
+        "name": "Diego Navas",
+        "id": "54iZ1Xn8GqgcZCFZNOcuKw"
+      },
+      {
+        "name": "Nibuman",
+        "id": "0btyGlNkbHQDkx92E9I5lS"
+      },
+      {
+        "name": "Allan V",
+        "id": "7KQRdUfylauQSc9LDwt1Cv"
+      },
+      {
+        "name": "ARM",
+        "id": "4TdMGChhzBYNXhADaEGUZX"
+      },
+      {
+        "name": "Junay",
+        "id": "2k1QfXOvwhFePewDXjutFD"
+      },
+      {
+        "name": "Energia",
+        "id": "6uFxO15AG9aoz7MS4aQQvp"
+      },
+      {
+        "name": "La Versatil",
+        "id": "6crbBH932XRcN4pwm4ao3x"
+      },
+      {
+        "name": "Lauren Sofia",
+        "id": "5mzGJi5OUAlS45MQ6LsHlt"
+      },
+      {
+        "name": "Liam",
+        "id": "5pUo3fmmHT8bhCyHE52hA6"
+      },
+      {
+        "name": "Los Rolands",
+        "id": "5Gczy2Me3LRBiQG5L1egQc"
+      },
+      {
+        "name": "Lukary",
+        "id": "3c7i06GITzgm6uoN0WfYac"
+      },
+      {
+        "name": "Max Urso",
+        "id": "1xDM4GFkWYlxgpHS1iz65B"
+      },
+      {
+        "name": "Helood",
+        "id": "2Pbdozs7gm9GNzh2dwBiOO"
+      },
+      {
+        "name": "Jhizzy",
+        "id": "09jpIVbRVXhBgDrvrsbfxa"
+      },
+      {
+        "name": "Kd La Caracola",
+        "id": "6IXyjz4eekvytXY7Hm3oGc"
+      },
+      {
+        "name": "Any la F\u00e9nix",
+        "id": "5D6arOx1BpOG6UiciT0xtq"
+      },
+      {
+        "name": "Joelsa",
+        "id": "0zqWmG69a0QxnsHwjsFelg"
+      },
+      {
+        "name": "JK EL ESPECIALISTA",
+        "id": "4f1Tg57rDhitOnCsj7LdL4"
+      },
+      {
+        "name": "TANA",
+        "id": "6fy9TVdcp4kUsk4S8v0xvB"
+      },
+      {
+        "name": "Andro Skrt",
+        "id": "3djWfPzAX7dRYkoT106ho9"
+      },
+      {
+        "name": "Wiston On The Beat",
+        "id": "4potB7o2ehAlX77HJ6a7Go"
+      },
+      {
+        "name": "Manu Martinez",
+        "id": "6PqLBIPs7YfXDxZjIygq58"
+      },
+      {
+        "name": "Cinthia Ar\u00e9valo",
+        "id": "3oBw9DeOLuDNtZYk08Uo6I"
+      },
+      {
+        "name": "Manu Destroy",
+        "id": "4X4RaPRuVyNe0X1d0uHG1H"
+      },
+      {
+        "name": "Gordon Arzu",
+        "id": "6ztaOnDlenpi4YHUyh15YB"
+      },
+      {
+        "name": "Valienthe",
+        "id": "5E1JrIdSjCbUdsUf0toXQw"
+      },
+      {
+        "name": "Gally LVDG",
+        "id": "5Ncc2G6L0dGhoWxx4oTHNk"
+      },
+      {
+        "name": "\u00c1ngel Z\u00fa\u00f1iga",
+        "id": "5gk6PDVVuqkVKYV48ht9To"
+      },
+      {
+        "name": "BadCow",
+        "id": "7oULj68bDBCGYBKuk7sn0E"
+      },
+      {
+        "name": "Merek Supraboy",
+        "id": "1Cs9Rbb6lpd6Pa4BtSzMbR"
+      },
+      {
+        "name": "Eivisso",
+        "id": "0do3w39OEjALm6gYs7Oy93"
+      },
+      {
+        "name": "Emmanuel Onfire",
+        "id": "47Ggd0RXXUSHtehAF2C9QO"
+      },
+      {
+        "name": "Jb El Hondure\u00f1o",
+        "id": "7yOTBOrTxlsdoHRYGNh0La"
+      },
+      {
+        "name": "Eduardo la ra\u00edz del ritmo",
+        "id": "4jvHNgiH3AloixVmeJRRxn"
+      },
+      {
+        "name": "YankTheGhots",
+        "id": "79UT72UmBW8yoKVUCCIt2P"
+      },
+      {
+        "name": "Suiry",
+        "id": "2gAgvwphgnyo6aaZeTUSKT"
+      },
+      {
+        "name": "Raffy HN",
+        "id": "7rEwKApsZMo8cXVxAndmvD"
+      },
+      {
+        "name": "Jordano HN",
+        "id": "5QctO1zX3iZBFYLilIJW9Y"
+      },
+      {
+        "name": "George Marino",
+        "id": "4Fgf6RvuWpiwDXSE7Vammx"
+      },
+      {
+        "name": "Liam",
+        "id": "5pUo3fmmHT8bhCyHE52hA6"
+      },
+      {
+        "name": "Energia",
+        "id": "6uFxO15AG9aoz7MS4aQQvp"
+      },
+      {
+        "name": "Aced Danee",
+        "id": "2o84iCmTQTR9QXz6L16QtU"
       }
     ],
     "global": [
       {
         "name": "Bad Bunny",
         "id": "4q3ewBC6Cngbe2vgoH97UB"
+      },
+      {
+        "name": "Rauw Alejandro",
+        "id": "1mcTU81TzQhprhouKaTkpq"
+      },
+      {
+        "name": "Shakira",
+        "id": "0EmeFodog0BfCgMzAIvKQp"
+      },
+      {
+        "name": "Karol G",
+        "id": "790FhLsOIvZqS9IPC09Ysb"
+      },
+      {
+        "name": "Feid",
+        "id": "2L9ghu3Fp6p07X970pSByS"
       }
     ]
   },
